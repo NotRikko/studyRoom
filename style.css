@@ -30,6 +30,7 @@
 
 #question {
     font-size: 40px;
+    text-align: center;
 }
 #promptInput {
     font-size: 20px;
@@ -45,7 +46,7 @@
 }
 
 #mainContainer {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     padding: 50px;
@@ -56,7 +57,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 85vw;
+    width: 80vw;
     height: 83vh;
     background-color: rgb(26, 26, 26);
     border: 1px solid white;
@@ -76,11 +77,52 @@
 }
 
 #studyGif {
-    width: 30vw;
-    height: 30vw;
+    width: 25vw;
+    height: 25vw;
     min-width: 250px;
     min-height: 250px;
     margin-top: auto;
     margin-bottom: auto;
     border-radius: 10px;
+}
+
+#subContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1vh;
+    margin-bottom: auto;
+    gap: 2vh;
+}
+
+@media (orientation: portrait) {
+    #subContainer {
+        margin-top: 10vh;
+    }
+}
+
+#songTitle {
+    font-size: 25px;
+}
+
+#songArtist {
+    font-size: 20px;
+}
+
+#songControl {
+    display: flex;
+    gap: 10px;
+}
+#play {
+    font-size: 25px;
+    border-radius: 40px;
+    border: none;
+}
+
+#return,
+#skip {
+    font-size: 18px;
+    border-radius: 40px;
+    border: none;
 }
