@@ -8,7 +8,12 @@ const songs = [
         title: "Moonshine",
         artist: "Prigida",
         song: "Songs/Moonshine.mp3"
-    }
+    },
+    {
+        title: "Alone",
+        artist: "Musikal",
+        song: "Songs/Alone.mp3"
+    },
 ]
 
 
@@ -18,11 +23,15 @@ let promptSubmit = document.querySelector("#promptButton");
 let promptWindow = document.querySelector("#prompt");
 let currentTask = document.querySelector("#task");
 let currentTime = document.querySelector("#time");
-let mainContainer = document.querySelector("#mainContainer");
+let mainContainer = document.querySelector("#mainContainer"); 
 let songAudio = document.querySelector("#songAudio");
 let songTitle = document.querySelector("#songTitle");
 let songArtist = document.querySelector("#songArtist");
-
+let skipButton = document.querySelector("#skip");
+let returnButton = document.querySelector("#return");
+let volumeControl = document.querySelector("#volumeSlider");
+let pausePlay = document.querySelector("#play");
+ 
 function updateTime() {
     let Time = new Date();
     let hours = Time.getHours();
@@ -63,4 +72,44 @@ function playNextSong() {
     playSong();
 }
 
+function playPreviousSong() {
+    if (currentSongIndex == 0) {
+        currentSongIndex = songs.length -1;
+        console.log(currentSongIndex);
+        playSong();
+    }
+    else {
+        currentSongIndex = (currentSongIndex -1) % songs.length;
+        playSong();
+    } 
+}
+
+
+skipButton.addEventListener("click", playNextSong);
 songAudio.addEventListener('ended', playNextSong);
+returnButton.addEventListener("click", playPreviousSong);
+
+volumeControl.addEventListener("change", function(volume) {
+    songAudio.volume = volume.target.value /100;
+    console.log(songAudio.volume);
+})
+
+function continueSong() {
+    pausePlay.textContent = "⏸️";
+    songAudio.play();
+    pausePlay.removeEventListener("click", continueSong);
+    pausePlay.addEventListener("click", pauseSong);
+}
+
+function pauseSong() {
+    pausePlay.textContent = "▶";
+    songAudio.pause();
+    pausePlay.removeEventListener("click", pauseSong)
+    pausePlay.addEventListener ("click", continueSong);
+}
+
+pausePlay.addEventListener ("click", pauseSong)
+
+
+
+
