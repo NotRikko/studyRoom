@@ -32,10 +32,21 @@
     font-size: 40px;
     text-align: center;
 }
+
+#howLong {
+    font-size: 25px;
+}
 #promptInput {
     font-size: 20px;
     height: 50px;
     width: 170px;
+    border: 1px solid white;
+}
+
+#timerSet {
+    font-size: 20px;
+    height: 50px;
+    width: 120px;
     border: 1px solid white;
 }
 #promptButton {
@@ -53,6 +64,19 @@
 }
 
 
+#headerContainer {
+    width: 55vw;
+    margin-left: 2vw;
+    margin-top: 2vh;
+    align-self: flex-start;
+    display: flex;
+    justify-content: space-between;
+}
+
+#timer {
+    font-size: 20px;
+}
+
 #studyGifContainer {
     display: flex;
     flex-direction: column;
@@ -64,11 +88,7 @@
     border-radius: 25px;
 }
 
-#taskTime {
-    align-self: flex-start;
-    margin-top: 3vw;
-    margin-left: 3vw;
-}
+
 
 #task,
 #time {

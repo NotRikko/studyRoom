@@ -19,6 +19,8 @@ const songs = [
 
 
 let promptInput = document.querySelector("#promptInput");
+let timerSet = document.querySelector("#timerSet")
+let timer = document.querySelector("#timer")
 let promptSubmit = document.querySelector("#promptButton");
 let promptWindow = document.querySelector("#prompt");
 let currentTask = document.querySelector("#task");
@@ -38,9 +40,14 @@ function updateTime() {
     let AmOrPm = hours >= 12 ? "PM" : "AM";
     hours = (hours % 12) || 12;
     let minutes = Time.getMinutes();
-    let displayTime = hours + ":" + minutes + "" + AmOrPm
+    let formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+    let displayTime = hours + ":" + formattedMinutes + "" + AmOrPm
    
     currentTime.textContent = displayTime;
+}
+
+function setTimer() {
+
 }
 
 let currentSongIndex = 0;
@@ -64,6 +71,49 @@ promptSubmit.addEventListener("click", () => {
     mainContainer.style.display = "flex";
     });   
 setInterval(updateTime, 1000);
+
+let timerDuration = 0;
+let actualTimer;
+
+function timerDone() {  
+    if (timerDuration ===0) {
+    clearInterval(actualTimer);
+    timer.textContent = "";
+    pauseSong();
+    promptWindow.style.display= "flex";
+    }
+}
+
+
+function startTimer(){ 
+    actualTimer = setInterval(function() {
+        if (timerDuration > 0){
+            timerDuration--;
+            console.log(timerDuration);
+            timer.textContent = timerDuration +"" + "min";
+        }
+
+    },10000)
+};
+
+
+
+promptSubmit.addEventListener("click", setTimer);
+promptSubmit.addEventListener("click", startTimer);
+promptSubmit.addEventListener("click", () =>
+    setInterval(timerDone, 3000)
+);
+
+function setTimer() {
+    clearInterval(actualTimer);
+    timerDuration = parseInt(timerSet.value );
+    if (isNaN(timerDuration)) {
+        timerDuration = 1;
+    }
+    timer.textContent += timerDuration +"" + "min";
+}
+
+
 
 
 
@@ -95,7 +145,7 @@ volumeControl.addEventListener("change", function(volume) {
 })
 
 function continueSong() {
-    pausePlay.textContent = "⏸️";
+    pausePlay.textContent = "⏹";
     songAudio.play();
     pausePlay.removeEventListener("click", continueSong);
     pausePlay.addEventListener("click", pauseSong);

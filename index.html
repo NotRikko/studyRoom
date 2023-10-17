@@ -11,13 +11,18 @@
     <div id="prompt"> 
         <div id="question">What would you like to do today?</div>
         <input type="text" autocomplete="off" id="promptInput">
+        <div id="howLong">How many minutes?</div>
+        <input type ="text" autocompelte = "off" id = "timerSet">
         <input type="button" id="promptButton" value="Start">
     </div>
     <div id="mainContainer">
         <div id="studyGifContainer">
-            <div id="taskTime">
-                <div id="task">Task: Studying</div>
-                <div id="time">Time:</div>
+            <div id="headerContainer">
+                <div id="taskTime">
+                    <div id="task">Task: Studying</div>
+                    <div id="time">Time:</div>
+                </div>
+                <div id="timer"></div>
             </div>
             <div id="subContainer">
                 <img id= "studyGif" src="https://www.icegif.com/wp-content/uploads/2021/09/icegif-5.gif">
@@ -27,7 +32,7 @@
                 <div id="songControl">
                     <audio id="songAudio" src=""></audio>
                     <button id="return">◀◀</button>
-                    <button id="play">⏸️</button>
+                    <button id="play">⏹</button>
                     <button id="skip">▶▶</button>
                 </div>
             </div>
