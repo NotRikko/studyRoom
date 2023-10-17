@@ -93,7 +93,7 @@ function startTimer(){
             timer.textContent = timerDuration +"" + "min";
         }
 
-    },10000)
+    },60000)
 };
 
 
