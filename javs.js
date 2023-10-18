@@ -33,6 +33,7 @@ let skipButton = document.querySelector("#skip");
 let returnButton = document.querySelector("#return");
 let volumeControl = document.querySelector("#volumeSlider");
 let pausePlay = document.querySelector("#play");
+let materialSymbol = document.querySelector(".playButton");
  
 function updateTime() {
     let Time = new Date();
@@ -145,14 +146,14 @@ volumeControl.addEventListener("change", function(volume) {
 })
 
 function continueSong() {
-    pausePlay.textContent = "⏹";
+    materialSymbol.textContent = "pause";
     songAudio.play();
     pausePlay.removeEventListener("click", continueSong);
     pausePlay.addEventListener("click", pauseSong);
 }
 
 function pauseSong() {
-    pausePlay.textContent = "▶";
+    materialSymbol.textContent = "play_arrow";
     songAudio.pause();
     pausePlay.removeEventListener("click", pauseSong)
     pausePlay.addEventListener ("click", continueSong);

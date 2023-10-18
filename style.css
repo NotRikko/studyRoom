@@ -152,6 +152,8 @@
     display: flex;
     gap: 10px;
 }
+
+
 #play {
     font-size: 25px;
     border-radius: 40px;

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="./javs.js" defer></script>
 </head>
 <body>
@@ -31,9 +32,9 @@
                 <input type="range" id="volumeSlider">
                 <div id="songControl">
                     <audio id="songAudio" src=""></audio>
-                    <button id="return">◀◀</button>
-                    <button id="play">⏹</button>
-                    <button id="skip">▶▶</button>
+                    <button id="return"><span class="material-symbols-outlined" style="font-size:36px;">fast_rewind</span></button>
+                    <button id="play"><span class="material-symbols-outlined playButton" style="font-size:36px;"> pause </span></button>
+                    <button id="skip"><span class="material-symbols-outlined" style="font-size:36px;">fast_forward</span></button>
                 </div>
             </div>
         </div>
