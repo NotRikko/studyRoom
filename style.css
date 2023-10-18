@@ -61,6 +61,7 @@
     flex-direction: column;
     align-items: center;
     padding: 50px;
+    overflow: auto;
 }
 
 
@@ -83,7 +84,6 @@
     align-items: center;
     width: 60vw;
     height: 83vh;
-    min-height: 500px;
     min-height: 500px;
     background-color: rgb(26, 26, 26);
     border: 1px solid white;
@@ -121,8 +121,10 @@
 
 @media (orientation: portrait) {
     #subContainer {
-        margin-top: 10vh;
+        margin-top: auto;
+        margin-bottom: auto;
     }
+
 }
 
 #songTitle {
