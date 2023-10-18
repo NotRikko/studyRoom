@@ -17,10 +17,10 @@ const songs = [
 ]
 
 
-
+let promptQuestion = document.querySelector("#question");
 let promptInput = document.querySelector("#promptInput");
-let timerSet = document.querySelector("#timerSet")
-let timer = document.querySelector("#timer")
+let timerSet = document.querySelector("#timerSet");
+let timer = document.querySelector("#timer");
 let promptSubmit = document.querySelector("#promptButton");
 let promptWindow = document.querySelector("#prompt");
 let currentTask = document.querySelector("#task");
@@ -34,6 +34,10 @@ let returnButton = document.querySelector("#return");
 let volumeControl = document.querySelector("#volumeSlider");
 let pausePlay = document.querySelector("#play");
 let materialSymbol = document.querySelector(".playButton");
+let darkMode = document.querySelector("#darkMode");
+let darkModeIcon = document.querySelector(".darkModeIcon");
+let studyGif = document.querySelector("#studyGif");
+let studyGifContainer = document.querySelector("#studyGifContainer");
  
 function updateTime() {
     let Time = new Date();
@@ -159,7 +163,58 @@ function pauseSong() {
     pausePlay.addEventListener ("click", continueSong);
 }
 
-pausePlay.addEventListener ("click", pauseSong)
+pausePlay.addEventListener ("click", pauseSong);
+
+let pageBody = document.querySelector("#pageBody");
+
+function switchDark() {
+    darkModeIcon.textContent = "light_mode";
+    darkModeIcon.style.color = "white";
+    pageBody.style.backgroundColor = "rgb(25, 24, 34)";
+    pageBody.style.color = "white";
+    studyGifContainer.style.borderColor = "white";
+    studyGif.src = "https://64.media.tumblr.com/ad9042c6fd131ce9b5c0fdae39a91102/tumblr_ouuiq8cdJK1tlgv32o1_540.gif";
+    materialSymbol.style.color = "white";
+    skipButton.style.color = "white";
+    returnButton.style.color = "white";
+    promptWindow.style.borderColor = "white";
+    promptWindow.style.color= "white";
+    promptInput.style.borderColor= "white";
+    promptSubmit.style.borderColor = "white";
+    timerSet.style.borderColor = "white";
+    promptQuestion.style.color = "white";
+    promptInput.style.color = "white";
+    timerSet.style.color = "white";
+    promptSubmit.style.color = "white";
+  
+    darkMode.removeEventListener("click",switchDark);
+    darkMode.addEventListener("click", switchLight);
+}
+
+function switchLight() {
+    darkModeIcon.textContent = "dark_mode";
+    darkModeIcon.style.color = "black";
+    pageBody.style.backgroundColor = "rgb(168, 214, 223)";
+    pageBody.style.color = "black";
+    studyGifContainer.style.borderColor = "black";
+    studyGif.src = "https://64.media.tumblr.com/d3781c73ba77c36791f0cd0a4134aa9d/tumblr_ouuryxTxBT1tlgv32o2_540.gif"
+    materialSymbol.style.color = "black";
+    skipButton.style.color = "black";
+    returnButton.style.color = "black";
+    promptWindow.style.borderColor = "black";
+    promptWindow.style.color= "black";
+    promptInput.style.borderColor= "black";
+    promptSubmit.style.borderColor = "black";
+    timerSet.style.borderColor = "black";
+    promptQuestion.style.color = "black";
+    promptInput.style.color = "black";
+    timerSet.style.color = "black";
+    promptSubmit.style.color = "black";
+    darkMode.removeEventListener("click",switchLight);
+    darkMode.addEventListener("click", switchDark);
+}
+
+darkMode.addEventListener("click",switchLight);
 
 
 

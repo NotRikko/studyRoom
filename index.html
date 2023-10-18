@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="./javs.js" defer></script>
 </head>
-<body>
+<body id="pageBody">
     <div id="prompt"> 
         <div id="question">What would you like to do today?</div>
         <input type="text" autocomplete="off" id="promptInput">
@@ -23,10 +23,13 @@
                     <div id="task">Task: Studying</div>
                     <div id="time">Time:</div>
                 </div>
-                <div id="timer"></div>
+                <div id="rightSide">
+                    <div id="timer"></div>
+                    <button id="darkMode"><span class="material-symbols-outlined darkModeIcon">dark_mode</span></button>
+                </div>
             </div>
             <div id="subContainer">
-                <img id= "studyGif" src="https://www.icegif.com/wp-content/uploads/2021/09/icegif-5.gif">
+                <img id= "studyGif" src="https://64.media.tumblr.com/ad9042c6fd131ce9b5c0fdae39a91102/tumblr_ouuiq8cdJK1tlgv32o1_540.gif">
                 <div id="songTitle"></div>
                 <div id="songArtist"></div>
                 <input type="range" id="volumeSlider">

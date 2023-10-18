@@ -1,7 +1,8 @@
-* {
-    background-color: rgb(26, 26, 26);
+#pageBody {
+    background-color: rgb(25, 24, 34);
     color: white;
 }
+
 
 #prompt {
     display: flex;
@@ -15,21 +16,23 @@
     bottom: 0;
     left: 0;
     right:0;
-    width: 90vw;
-    height: 85vh;
-    background-color: rgb(33, 32, 34);
+    width: 60vw;
+    height: 70vh;
+    background-color: inherit;
     border: 1px solid white;
     z-index: 999;
+    color: white;
 }
 
 #question,
 #promptInput,
 #promptButton {
+    color: white;
     background-color: rgba(81, 64, 100, 0);
 }
 
 #question {
-    font-size: 40px;
+    font-size: 38px;
     text-align: center;
 }
 
@@ -40,7 +43,7 @@
     font-size: 20px;
     height: 50px;
     width: 170px;
-    border: 1px solid white;
+    border: 1px solid rgb(255, 255, 255);
 }
 
 #timerSet {
@@ -48,12 +51,20 @@
     height: 50px;
     width: 120px;
     border: 1px solid white;
+    background-color: inherit;
+    color: rgb(255, 255, 255);
 }
 #promptButton {
     height: 50px;
     width: 100px;
     border: 1px solid white;
     border-radius: 5px;
+}
+
+@media (orientation: portrait) {
+    #question {
+        font-size: 28px;
+    }
 }
 
 #mainContainer {
@@ -74,9 +85,23 @@
     justify-content: space-between;
 }
 
+#rightSide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
 #timer {
     font-size: 22px;
 }
+
+#darkMode {
+    border: none;
+    color: white;
+    background-color: inherit;
+}
+
 
 #studyGifContainer {
     display: flex;
@@ -85,8 +110,8 @@
     width: 60vw;
     height: 83vh;
     min-height: 500px;
-    background-color: rgb(26, 26, 26);
-    border: 1px solid white;
+    background-color: inherit;
+    border: 3px solid white;
     border-radius: 25px;
 }
 
@@ -95,7 +120,7 @@
 #task,
 #time {
     font-size: 20px;
-    background-color: rgb(26, 26, 26);
+    background-color: inherit;
 }
 
 #studyGif {
@@ -170,4 +195,11 @@
     font-size: 18px;
     border-radius: 40px;
     border: none;
+}
+
+#play,
+#return,
+#skip {
+    color: white;
+    background-color: inherit;
 }
